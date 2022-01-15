@@ -10,8 +10,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Header />
-         <AuthenticatedWelcomePage />)
+        <AuthenticatedWelcomePage />)
       </Router>
     </Provider>
   );
