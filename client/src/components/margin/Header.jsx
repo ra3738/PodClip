@@ -5,7 +5,6 @@ import { Typography, AppBar, Toolbar, Menu, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import createHistory from 'history/createBrowserHistory';
 import { useSelector, useDispatch } from 'react-redux';
-import { useAuth0 } from '../../authentication/react-auth0-spa';
 import colors from '../../constants/colors';
 import { deleteAccount } from '../../redux/actions/userActions';
 
@@ -57,7 +56,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -71,7 +69,6 @@ const Header = () => {
 
   const handleLogOut = () => {
     handleMenuClose();
-    logout();
   };
 
   const patientState = useSelector(state => state.patient);
@@ -80,7 +77,6 @@ const Header = () => {
   const getDoctorsOnClick = () => {
     deleteAccount(dispatch, patientState.id);
     handleMenuClose();
-    logout();
   };
 
   const renderMenu = (
