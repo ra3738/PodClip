@@ -1,8 +1,8 @@
 const router = require('express').Router();
-
-router.get('/:id', (req, res) => {
+// Expect url in body 
+router.post('/', (req, res) => {
   // some logic 
-  res.send(req.params.id); 
+  res.send(req.body.url); 
   return res.status(200); 
 });
 
