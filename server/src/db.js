@@ -1,6 +1,6 @@
 //Import the mongoose module
 var mongoose = require('mongoose');
-
+var db = ""; 
 function connect() 
 {
 //Set up default mongoose connection
@@ -9,10 +9,10 @@ var mongoDB = `mongodb+srv://admin:${mongoPass}@podclip.0zdey.mongodb.net/PodCli
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log("Connected to DB succesfully"));
 
 //Get the default connection
-var db = mongoose.connection;
+ db = mongoose.connection;
 
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 }
 
-exports.connect = connect; 
+module.exports = {db, connect}; 
