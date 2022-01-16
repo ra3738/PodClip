@@ -3,7 +3,7 @@ const cors = require('cors');
 const expressPino = require('express-pino-logger');
 const path = require('path');
 const logger = require('./utils/logger');
-const testRouter = require('./routes/testRouter')
+const testRouter = require('./routes/testRouter');
 const { ENVIRONMENT } = require('./utils/constants');
 require('dotenv').config();
 
