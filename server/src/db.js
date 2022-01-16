@@ -1,18 +1,18 @@
-//Import the mongoose module
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-function connect() 
-{
-//Set up default mongoose connection
-const mongoPass = process.env.MONGOPASSWORD
-var mongoDB = `mongodb+srv://admin:${mongoPass}@podclip.0zdey.mongodb.net/PodClip?retryWrites=true&w=majority`;
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log("Connected to DB succesfully"));
+function connect() {
+  // Set up default mongoose connection
 
-//Get the default connection
-var db = mongoose.connection;
+  const mongoPass = process.env.MONGOPASSWORD
+  const mongoDB = `mongodb+srv://admin:${mongoPass}@podclip.0zdey.mongodb.net/PodClip?retryWrites=true&w=majority`;
+  mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Connected to DB succesfully'));
 
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+  // Get the default connection
+  const db = mongoose.connection;
+
+  // Bind connection to error event (to get notification of connection errors)
+  db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+  return db;
 }
 
-exports.connect = connect; 
+exports.connect = connect;
