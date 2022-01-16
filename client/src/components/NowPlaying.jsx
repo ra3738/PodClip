@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-class AuthenticatedWelcomePage extends React.Component {
+class NowPlaying extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -52,4 +52,4 @@ class AuthenticatedWelcomePage extends React.Component {
   }
 };
 
-export default withStyles(useStyles)(AuthenticatedWelcomePage);
+export default withStyles(useStyles)(NowPlaying);
