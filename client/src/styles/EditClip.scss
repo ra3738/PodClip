@@ -1,0 +1,64 @@
+.transcript-frame {
+	position: absolute;
+}
+
+.transcript {
+	p {
+		font-family: 'Roboto Slab';
+		font-weight: 200;
+		letter-spacing: 0.25px;
+		line-height: 1.75em;
+		font-size: 0.95em;
+		margin-bottom: 15px;
+		
+		color: #E0E2ED;
+
+		&::selection {
+			color: #fff;
+			background-color: #283359;
+			// background-color: none;
+		}
+
+		&:first-child {
+			margin-top: 20px;
+		}
+	}
+
+	max-height: calc(100vh - 90px);
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;	
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none;  /* IE and Edge */
+ 	scrollbar-width: none;  /* Firefox */
+}
+
+#highlight {
+	color: #fff;
+	background-color: #3d4b7e;
+}
+
+.captionBox {
+	position: fixed;
+	bottom: 26px;
+	// width: calc(100% - 18px); // Not sure why 18px, but it works
+	width: calc(100% - 64px); // Not sure why 64px, but it works
+	// margin: auto;
+	// margin-right: -50px;
+	padding: 0.5em;
+
+	background-color: #282747;
+	border-radius: 8px;
+	border-style: solid;
+	border-color: #7E8BFF;
+	border-width: 1px;
+	
+	box-shadow: 0px 3px 4px 0px rgba(#C3C7E6, 0.18);
+
+	color: #fff;
+	font-family: 'Roboto';
+	font-size: 1.05em;
+}
