@@ -25,6 +25,12 @@ const useStyles = makeStyles({
 class NowPlaying extends React.Component {
   constructor(props) {
     super(props)
+    this.displayText()
+  }
+
+  displayText() {
+    // const data = JSON.parse(podcast)
+    console.log('Hello')
   }
 
   render() {
