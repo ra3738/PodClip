@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const echo = require('./testRoute/echo');
-const { TEST_ROUTE } = require('../utils/constants');
+const file = require('./podcastRoute/file');
+const { PODCAST_ROUTE } = require('../utils/constants');
 
-router.use(TEST_ROUTE, echo);
+router.use(PODCAST_ROUTE, file);
 
 module.exports = router;

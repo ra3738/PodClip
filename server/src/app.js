@@ -3,7 +3,8 @@ const cors = require('cors');
 const expressPino = require('express-pino-logger');
 const path = require('path');
 const logger = require('./utils/logger');
-const router = require('./routes/router')
+const router = require('./routes/router');
+const podcastRouter = require('./routes/podcastRouter');
 const { ENVIRONMENT } = require('./utils/constants');
 require('dotenv').config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 const { BASE_ROUTE } = require('./utils/constants');
 
 app.use(BASE_ROUTE, router);
+app.use(BASE_ROUTE, podcastRouter);
 
 if (ENVIRONMENT === 'production' || ENVIRONMENT === 'dev') {
   app.use('/static', express.static(path.join(`${__dirname}/../../`, 'client/build/static')));

@@ -1,8 +1,15 @@
 const router = require('express').Router();
+const connect = require('../../db');
 
-router.get('/echo/:test', (req, res) => {
-  const message = req.params.test;
-  res.send(message);
+router.get('/file/:id', (req, res) => {
+  const id = req.params.id;
+  const db = connect();
+  // const podcastSchema = new mongoose.Schema({
+  //   title: String,
+  // });
+  const podcasts = db.Podcasts.find(
+    {}
+  );
   return res.status(200);
 });
 
