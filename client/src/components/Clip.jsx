@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Clips extends React.Component {
+class Clip extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
     return (
-      <div className="clip">
+      <div className="clip clip-selected">
         <div className="clip-titleline">
           <h2 className="clip-title">Clip title</h2>
           <p className="clip-timestamp">13:11</p>
@@ -31,4 +31,4 @@ class Clips extends React.Component {
   }
 };
 
-export default Clips;
+export default Clip;
