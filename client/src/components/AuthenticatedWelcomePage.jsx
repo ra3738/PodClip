@@ -32,7 +32,7 @@ class AuthenticatedWelcomePage extends React.Component {
     const { history } = createHistory({ forceRefresh: true });
     return (
       <Grid container>
-        <Grid item xs={3}>
+        <Grid item xs={12}>
           <Card className={classes.root}>
             <CardActionArea onClick={() => history.push('/card1')}>
               <CardMedia
@@ -42,52 +42,6 @@ class AuthenticatedWelcomePage extends React.Component {
               <CardContent>
                 <Typography gutterBottom variant='h6' component='h2' align='center'>
                   Card 1
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.root}>
-            <CardActionArea onClick={() => history.push('/card2')}>
-              <CardMedia
-                className={classes.media}
-                image='https://www.hr.ubc.ca/benefits-fyi/files/2013/03/find-a-doctor-483x328.jpg'
-              />
-              <CardContent>
-                <Typography gutterBottom variant='h6' component='h2' align='center'>
-                  Card 2
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.root}>
-            <CardActionArea onClick={() => history.push('/card3')}>
-              <CardMedia
-                className={classes.media}
-                image='https://image.freepik.com/free-vector/start_53876-25533.jpg'
-              />
-              <CardContent>
-                <Typography gutterBottom align='center' variant='h6' component='h2'>
-                  Card 3
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.root}>
-            <CardActionArea onClick={() => history.push('/card4')}>
-              <CardContent>
-                <Typography gutterBottom variant='h1' component='h2' align='center'>
-                  💵
-                </Typography>
-              </CardContent>
-              <CardContent>
-                <Typography gutterBottom variant='h6' component='h2' align='center'>
-                  Card 4
                 </Typography>
               </CardContent>
             </CardActionArea>
