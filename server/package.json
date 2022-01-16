@@ -13,6 +13,8 @@
     "express": "^4.17.1",
     "express-pino-logger": "^5.0.0",
     "fast-xml-parser": "^4.0.1",
+    "find-config": "^1.0.0",
+    "mongodb": "^4.3.0",
     "mongoose": "^6.1.6",
     "nodemon": "^2.0.4",
     "pg": "^8.2.1",
