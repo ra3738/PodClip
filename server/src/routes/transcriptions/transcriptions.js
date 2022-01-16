@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const config = require('./podcast.json')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 // Expect url in body 
 router.post('/', (req, res) => {
@@ -57,13 +58,15 @@ function isTimestampWithinRange(timestamp, leftOffset, rightOffset) {
     //   console.log('...')
     // }
 
-    let url = 'https://spsvcprodusw.blob.core.windows.net/bestor-338cca94-e7c5-4fc1-8a7b-7b8c19fd291a/TranscriptionData/8fb95f81-a41c-435c-9f2d-4ca06c1fc370_0_0.json?sv=2020-08-04&st=2022-01-15T23%3A14%3A58Z&se=2022-01-16T11%3A19%3A58Z&sr=b&sp=rl&sig=8EEpR2IGxdj%2BzJXGRVBac7pAgOi3Uy8rWt9thPjLT0g%3D';
-    fetch(url)
-      .then(res => res.json())
-      .then(out =>
-        console.log('Checkout this JSON! ', out))
+    // let url = 'https://tools.learningcontainer.com/sample-json.json';
+    // fetch(url)
+    //   .then(res => res.json())
+    //   .then(out =>
+    //     console.log('Checkout this JSON! ', out))
 
-    
+    fetch("https://tools.learningcontainer.com/sample-json.json")
+      .then(response => response.json())
+      .then(json => console.log(json));
 
     return leftOffsetDate.getTime() <= timeStampDate.getTime() && timeStampDate.getTime() <= rightOffsetDate.getTime();
 };
@@ -73,8 +76,6 @@ function parseOffset(timestamp) {
     timeArray = timeArray.filter(x => x != '');
     return timeArray
 }
-
-
 
   // fetch('https://yesno.wtf/api')
   //   .then(res => res.json())
