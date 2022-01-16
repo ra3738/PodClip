@@ -1,26 +1,10 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
-import { Grid } from '@material-ui/core';
+import Clips from './Clips.jsx'
+import Timeline from './Timeline.jsx'
 
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles({
-  root: {
-    width: 280,
-    height: 280,
-    margin: '40px',
-  },
-  media: {
-    height: 180,
-  },
-});
+import styles from '../styles/NowPlaying.scss'
 
 class NowPlaying extends React.Component {
   constructor(props) {
@@ -28,28 +12,18 @@ class NowPlaying extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
     const { history } = createHistory({ forceRefresh: true });
     return (
-      <Grid container>
-        <Grid item xs={12}>
-          <Card className={classes.root}>
-            <CardActionArea onClick={() => history.push('/card1')}>
-              <CardMedia
-                className={classes.media}
-                image='https://blogs.ubc.ca/theedventure/files/2015/12/de1_0506.jpg'
-              />
-              <CardContent>
-                <Typography gutterBottom variant='h6' component='h2' align='center'>
-                  Card 1
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-      </Grid>
+      <div className="screen">
+        <div className="container">
+        <Clips />
+        <Timeline />
+        {/* <Controls />
+        <Player /> */}
+        </div>
+      </div>
     );
   }
 };
 
-export default withStyles(useStyles)(NowPlaying);
+export default NowPlaying;

@@ -1,0 +1,117 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:wght@400;700&display=swap');
+
+// Variables
+$screen-width: 375px;
+$screen-height: 812px;
+$color-bg: #181735;
+
+// Styles
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+	background-color: $color-bg;
+}
+
+.screen {
+	width: 100%;
+	height: 100%;
+	// width: $screen-width;
+	// height: $screen-height;
+	// max-width: $screen-width;
+	// max-height: $screen-height;
+	background-color: #181735;
+
+	font-family: 'Roboto';
+	color: #C3C7E6;
+
+	margin: 0;
+	// position: absolute;
+	// top: 50%;
+	// left: 50%;
+	// transform: translate(-50%, -50%);
+	// margin: calc($screen-height/-2) 0 0 calc($screen-width/-2);
+}
+
+.container {
+	margin-left: 23px;
+	margin-right: 23px;
+}
+
+h1 {
+	font-size: 20pt;
+	color: #CFD7FF;
+	margin-top: 30px;
+	margin-bottom: 16px;
+}
+
+.clip {
+	background-color: #282747;
+	padding: 12px;
+	border-radius: 7px;
+	margin-bottom: 15px;
+
+	&.clip-selected {
+		border-color: #7E8BFF;
+		border-width: 0.5px;
+		border-style: solid;
+
+		box-shadow: 0px 3px 4px 0px rgba(#C3C7E6, 0.18);
+	}
+
+	&:not(.clip-selected) {
+		.clip-controls {
+			display: none;
+		}
+	}
+}
+
+.clip-titleline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	margin-bottom: 8px;
+}
+
+.clip-title {
+	// float: left;
+	
+	color: #fff;
+}
+
+.clip-timestamp {
+	font-size: 0.8em;
+	align-self: center;
+}
+
+.clip-quote {
+	display: flex;
+	font-family: 'Roboto Slab';
+	font-size: 0.8em;
+	letter-spacing: 0.25px;
+
+	color: #C3C7E6;
+}
+
+.clip-controls {
+	color: #7E8BFF;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin-top: 16px;
+
+	div {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+}
